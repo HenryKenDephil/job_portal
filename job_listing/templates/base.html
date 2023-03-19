@@ -15,7 +15,10 @@
     
     <!-- Favicon Icon -->
     <link rel="shortcut icon" href="assets/img/favicon.png">
-    
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap-select.min.css">
@@ -31,7 +34,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
-<link rel="stylesheet" href=" {% static 'app/css/style.css' %}">
+<link rel="stylesheet" href=" {% static 'style.css' %}">
 <link rel="stylesheet" href=" {% static 'app/css/all.min.css' %}">
 
 <link reil="stylesheet" href=" {% static 'app/css/owl.carousel.css' %}">
@@ -43,11 +46,12 @@
     </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light text-white bg-dark ">
-        <a class="navbar-brand text-white" href="#">plp online store</a>
+<nav class="navbar navbar-expand-lg navbar-light text-dark bg-dark ">
+        <a class="navbar-brand text-white" href="#">job Portal</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
+            <i class="fa fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,37 +61,37 @@
                 </li>
                 <li class="nav-item dropdown"> 
                   <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Employer</a>
-                    <ul class="dropdown-menu animated">
-                      <li><a href="#">Employer</a></li>
-                      <li><a href="#">Employer Detail</a></li>
-                      <li><a href="#">Create Company</a></li>
-                      <li><a href="#">Manage Resume</a></li>
-                      <li><a href="#">Add Job</a></li>
-                      <li><a href="#">Resume Detail</a></li>
+                    <ul class="dropdown-menu animated text-dark">
+                      <li ><a class="text-dark" href="#">Employer</a></li>
+                      <li><a class="text-dark" href="#">Employer Detail</a></li>
+                      <li><a class="text-dark" href="#">Create Company</a></li>
+                      <li><a class="text-dark" href="#">Manage Resume</a></li>
+                      <li><a class="text-dark" href="#">Add Job</a></li>
+                      <li><a class="text-dark" href="#">Resume Detail</a></li>
                     </ul>
                 </li>
                
                 <li class="nav-item dropdown"> 
                   <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Candidate</a>
                     <ul class="dropdown-menu animated">
-                        <li><a href="#">Candidate</a></li>
-                        <li><a href="#">Browse Jobs</a></li>
-                        <li><a href="#">Manage Jobs</a></li>
-                        <li><a href="#">Browse Categories</a></li>
+                        <li><a class="text-dark" href="#">Candidate</a></li>
+                        <li><a class="text-dark" href="#">Browse Jobs</a></li>
+                        <li><a class="text-dark" href="#">Manage Jobs</a></li>
+                        <li><a class="text-dark" href="#">Browse Categories</a></li>
                     </ul>
                 </li>
             
                 <li class="nav-item dropdown"> 
                   <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Pages</a>
                     <ul class="dropdown-menu animated">
-                      <li><a href="#">Profile Settings</a></li>
-                      <li><a href="#">Job Detail</a></li>
-                      <li><a href="#">Job Layout One</a></li>
+                      <li><a class="text-dark" href="#">Profile Settings</a></li>
+                      <li><a class="text-dark" href="#">Job Detail</a></li>
+                      <li><a class="text-dark" href="#">Job Layout One</a></li>
                     </ul>
                 </li>
               
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About us</a>
+                    <a class="nav-link text-dark" href="#">About us</a>
                 </li>
 
                
@@ -132,59 +136,61 @@
         <div class="container"> 
           <div class="row">
             <div class="col-md-3 col-sm-4">
-              <a href="index.html"><img class="footer-logo" src=".." alt="image"></a>
+              <a href="#"><img class="footer-logo " src="{% static 'images/job logo.avif' %}"  width='100' height='100' alt="image"></a>
               <p>Lorem Ipsum is simply dummy text of printing and 
                 type setting industry. Lorem Ipsum been industry standard dummy text ever since.</p>
               <!-- Social Box -->
-              <div class="f-social-box">
-                <ul>
-                  <li><a href="#"><i class="fa fa-facebook facebook-cl"></i></a></li>
-                  <li><a href="#"><i class="fa fa-google google-plus-cl"></i></a></li>
-                  <li><a href="#"><i class="fa fa-twitter twitter-cl"></i></a></li>
-                  <li><a href="#"><i class="fa fa-instagram instagram-cl"></i></a></li>
-                </ul>
-              </div>        
+              
+              <h4 id="customer text-center">find us on social media</h4>
+              <div class="media text-center">
+                  <i class="fa fa-facebook"></i>
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </div>       
             </div>	
             <div class="col-md-9 col-sm-8">
               <div class="row">
                 <div class="col-md-3 col-sm-6">
                   <h4>Job Categories</h4>
                   <ul>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Work from Home</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Internship Job</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Freelancer Job</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Part Time Job</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Full Time Job</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Work from Home</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Internship Job</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Freelancer Job</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Part Time Job</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Full Time Job</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
                   <h4>Job Type</h4>
                   <ul>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Create Account</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Career Counseling</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> My Oficiona</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Report a Problem</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Create Account</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Career Counseling</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> My Oficiona</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> FAQ</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Report a Problem</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
                   <h4>Resources</h4>
                   <ul>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> My Account</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Support</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> How It Works</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Underwriting</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Employers</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> My Account</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Support</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> How It Works</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Underwriting</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Employers</a></li>
                   </ul>
                 </div>
                 <div class="col-md-3 col-sm-6">
                   <h4>Quick Links</h4>
                   <ul>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Jobs Listing</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
-                    <li><a href="#"><i class="fa fa-angle-double-right"></i> Term &amp; Condition</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Jobs Listing</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> About Us</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Contact Us</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Privacy Policy</a></li>
+                    <li><a class="text-white" href="#"><i class="fa fa-angle-double-right"></i> Term &amp; Condition</a></li>
                   </ul>
                 </div>
               </div>
@@ -199,7 +205,7 @@
           </div>
         </div>
       </footer>
-    {% comment %} <footer class="container-fluid bg-dark text-center mt-5 p-2 text-white fixed-bottom"> copyright: 2023|| Designed by {% endcomment %}
+    {% comment %} <footer class="container-fluid bg-dark text-center mt-5 p-2 text-dark fixed-bottom"> copyright: 2023|| Designed by {% endcomment %}
         {% comment %} David Onyango and philister </footer> {% endcomment %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
