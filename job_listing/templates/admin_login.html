@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+admin page
+{% endblock %}
+
+{%block admin-page%}
+<marquee style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
+    Admin  Login
+</marquee>
+
+<section class="section-conten padding-y" style="min-height:84vh">
+
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+            <form class="container mt 5" method="post" >
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_username">Username:</label>
+                    <input type="Username" class="form-control" name="Username" autocomplete="Username"
+                        required="" id="id_Username" placeholder="Enter Username">
+            
+                </div>
+                <div class="form-group">
+                    <label for="id_password">Password:</label>
+                    <input type="password" class="form-control" name="password" autocomplete="current-password"
+                        required="" id="id_password"  placeholder="*********">
+            
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block" style="margin-top: 2%; color:purple; background-color:gray"> Login </button>
+                </div>
+            
+            
+                
+              
+              </form>
+           
+        </div>
+    </div>
+    <br><br>
+
+</section>
+
+
+
+{% endblock %}

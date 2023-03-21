@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+admin page
+{% endblock %}
+
+{%block user-page%}
+<marquee style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
+    User Login
+</marquee>
+
+<section class="section-conten padding-y" style="min-height:84vh">
+
+    <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+        <div class="card-body">
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_email">Email:</label>
+                    <input type="Email" class="form-control" name="email" autocomplete="Email"
+                        required="" id="id_email" placeholder="youremail@gmail.com">
+
+                </div>
+                <div class="form-group">
+                    <label for="id_password">Password:</label>
+                    <input type="password" class="form-control" name="password" autocomplete="current-password"
+                        required="" id="id_password" placeholder="**********">
+
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="Login" class="btn btn-primary btn-block" style="margin-top: 2%; color:purple; background-color:gray"> Login </button>
+                </div>
+                 <a href="{% url 'user_signup' %}" class="additional-link"  > Dont have an account? <span> SignUp </span> </a>
+            </form>
+        </div>
+    </div>
+    <br><br>
+
+</section>
+
+{% endblock %}
