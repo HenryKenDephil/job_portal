@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import  User
 from django.utils import timezone
 from autoslug import AutoSlugField
-#from django_countries.fields import CountryField
+from django_countries.fields import CountryField
 from recruiters.models import Job
 
 
@@ -21,7 +21,7 @@ class Profile(models.Model):
     full_name = models.CharField(max_length=200, null=True, blank=True)
     country = models.CharField(null=True, blank=True, max_length=255)
     location = models.CharField(null=True, blank=True, max_length=255)
-    resume = models.CharField(null=True, blank=True, upload_to='resumes')
+    resume = models.FileField(upload_to='resumes')
     grad_year = models.IntegerField(blank=True)
     looking_for = models.CharField(null=True, max_length=30,  choices=CHOICES,
                                    default='Full Timme')
