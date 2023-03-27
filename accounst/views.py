@@ -11,18 +11,40 @@ from django.core.files.storage import FileSystemStorage
 
 def admin_login(request):
     return render(request, 'admin_login.html')
+
+
 def user_login(request):
-    return render(request, 'user_login.html')
+    error = ''
+    if request.method == 'POST':
+       username = request.POST['email'];
+       password = request.POST['password'];
+       user = authenticate(username=username, password= password)
+       if user:
+            try:
+               user1 = StudentUser.objects.get(user=user)
+               if user1.type == 'student':
+                   login(request, user)
+                   error="no"
+               else:
+                   error= "yes"
+            except:
+               error = "yes"
+       else:
+           error = "yes"
+           
+    return render(request, 'user_login.html', {'error': error})
+
+
 def user_signup(request):
     error = ''
     if request.method == 'POST':
-        fname = request.POST['first_name']
-        lname = request.POST['last_name']
-        email = request.POST['email']
-        contact = request.POST['contact']
-        password = request.POST['password1']
-        image = request.POST['image']
-        gender = request.POST['gender']
+        fname = request.POST['first_name'];
+        lname = request.POST['last_name'];
+        email = request.POST['email'];
+        contact = request.POST['contact'];
+        password = request.POST['password1'];
+        image = request.POST['image'];
+        gender = request.POST['gender'];
         try:
           user=User.objects.create_user(first_name = fname, last_name = lname, email = email, password=password)
           StudentUser.objects.create(user=user, mobile=contact, image= image, gender= gender, stype= "student")
@@ -31,6 +53,14 @@ def user_signup(request):
             error = "yes" 
     d ={'error':error}  
     return render(request, 'user_signup.html', d)
+
+
+
+def user_logout(request):
+    return render(request, 'admin_login.html')
+
+def change_password(request):
+    return render(request, 'admin_login.html')
 # def login(request):
 #     if request.method == 'POST':
 #         form= AuthenticationForm(data=request.POST)

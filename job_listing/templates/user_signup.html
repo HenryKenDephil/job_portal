@@ -122,8 +122,7 @@ user signup page
                             </div>
 
 
-                            <a href="{% url 'user_login'%}" class="additional-link"
-                                style="color:gray;text-decoration:none">Have an Account? <span>
+                            <a href="{% url 'user_login'%}" class="additional-link" style="color:gray;text-decoration:none">Have an Account? <span>
                                     Login Now
 
                                 </span></a>
@@ -138,15 +137,20 @@ user signup page
 
 
 
-<!-- {% if  error is "no" %} -->
+{% if  error == "yes" %}
 <script>
-    if (error === 'no') {
-        alert('signup successfully');
-        window.location.href = "{% url 'user_login' %}"
-    } else {
-        alert('something went wrong, try again');
-    }
+    alert('signup successfully');
+    window.location.href = "{% url 'user_login' %}"
+</script>
+{% endif %}
+
+{% if error == "no"  %}
+
+<script>
+    alert('something went wrong, try again');
 </script>
 
+{% endif %}
 
 {% endblock %}
+
