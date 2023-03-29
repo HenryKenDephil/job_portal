@@ -2,5 +2,64 @@
 {% load static %}
 
 {% block title %}
-user home  page
+user home page
 {% endblock %}
+
+{% block job_category %}
+<div class="container">
+    <h1 class="heading mt-5 text-center" style="color:purple; font-weight:bold">JOB CATEGORIES</h1>
+    <div class="row card-columns mt-5" style="padding: 20px; margin:auto">
+
+        
+      
+        <div class=" col-4  ">
+            <div class="card mt-2">
+                <div class="card-body text-center">
+                    <h3>Full time job</h3>
+                    <p class="card-text">2234 jobs</p>
+                </div>
+            </div>
+        </div>
+       
+
+        <div class=" col-4  ">
+            <div class="card  mt-2">
+                <div class="card-body text-center">
+                    <h3>Part time job</h3>
+                    <p class="card-text">734 jobs</p>
+                </div>
+            </div>
+        </div>
+        <div class=" col-4  ">
+            <div class="card  mt-2">
+                <div class="card-body text-center">
+                    <h3>Remote job</h3>
+                    <p class="card-text">234 jobs</p>
+                </div>
+            </div>
+        </div>
+        <div class=" col-4  ">
+            <div class="card  mt-5">
+                <div class="card-body text-center">
+                    <h3>Freelance job</h3>
+                    <p class="card-text">60034 jobs</p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class=" col-4  ">
+            <div class="card  mt-5">
+                <div class="card-body text-center">
+                    <h3>Internship job</h3>
+                    <p class="card-text">1234 jobs</p>
+                </div>
+            </div>
+        </div>
+        
+    
+
+
+    </div>
+</div>
+{% endblock%}

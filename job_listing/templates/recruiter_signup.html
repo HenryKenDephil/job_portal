@@ -24,7 +24,7 @@ user signup page
 
 <marquee
     style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
-    User signup
+    recruiter signup
 </marquee>
 <section class="section-conten padding-y" style="min-height:84vh">
     <div class="container" style=" margin-top:100px;">
@@ -32,25 +32,25 @@ user signup page
             {% csrf_token %}
             <div class="row justify-content-md-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="signup-screen">
-                        <div class="signup-box">
+                    <div class="login-screen">
+                        <div class="login-box">
 
                             <div class="row gutters">
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="id_firstname">First Name:</label>
                                         <input type="text" class="form-control" name="first_name"
-                                            placeholder="First Name" maxlength="100" , required="" id="first_name">
+                                            placeholder="First Name" maxlength="100" , required="" id="id_first_name">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="id_lastname">Last Name:</label>
                                         <input type="text" class="form-control" name="last_name" placeholder="Last Name"
-                                            maxlength="100" , required="" id="last_name">
+                                            maxlength="100" , required="" id="id_last_name">
                                     </div>
                                 </div>
-                               
+                           
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="id_email">Email:</label>
@@ -59,15 +59,7 @@ user signup page
 
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label for="id_contact">Contact:</label>
-                                        <input type="Text" class="form-control" name="contact"
-                                            placeholder="Enter your Phone number" maxlength="100" , required=""
-                                            id="contact">
-
-                                    </div>
-                                </div>
+                             
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="id_password">Password:</label>
@@ -82,31 +74,21 @@ user signup page
                                             placeholder="******" , required="" id="password2">
                                     </div>
                                 </div>
-
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label for="gender">Gender:</label>
-                                        <div style="border:1px solid lightgray;border-radius:5px ; padding:6px ">
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="customRadioInline1"
-                                                    name="gender" value="male">
-                                                <label class="custom-control-label"
-                                                    for="customRadioInline1">male</label>
-                                            </div>
-                                            <div class="custom-control custom-radio custom-control-inline">
-                                                <input type="radio" class="custom-control-input" id="customRadioInline2"
-                                                    name="gender" value="Female">
-                                                <label class="custom-control-label"
-                                                    for="customRadioInline2">Female</label>
-                                            </div>
-                                        </div>
+                                        <label for="id_contact">Contact:</label>
+                                        <input type="Text" class="form-control" name="contact"
+                                            placeholder="Enter your Phone number" maxlength="100" , required=""
+                                            id="contact">
+
                                     </div>
                                 </div>
+                      
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label for="id_image"> image:</label>
-                                        <input type="file" class="form-control" name="image" , required=""
-                                            id="image">
+                                        <label for="company_name"> Company Name:</label>
+                                        <input type="text" class="form-control" name="company_name" , required=""
+                                            id="company_name">
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +98,7 @@ user signup page
                             </div>
 
 
-                            <a href="{% url 'user_login'%}" class="additional-link" style="color:gray;text-decoration:none">Have an Account? <span>
+                            <a href="{% url 'recruiter_login'%}" class="additional-link" style="color:gray;text-decoration:none">Have an Account? <span>
                                     Login Now
 
                                 </span></a>
@@ -124,25 +106,26 @@ user signup page
                     </div>
                 </div>
             </div>
-
+           
         </form>
     </div>
 </section>
 
 
 
-{% if error is "no" %}
+{% if  error == "no" %}
 <script>
     alert('signup successfully');
-    window.location.href = "{% url 'user_login' %}"
+    window.location.href = "{% url 'recruiter_login' %}"
 </script>
 {% endif %}
 
-{% if error is "yes"  %}
+{% if error == "yes"  %}
+
 <script>
     alert('something went wrong, try again');
 </script>
-{% endif %} 
+
+{% endif %}
 
 {% endblock %}
-

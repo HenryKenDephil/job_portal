@@ -2,9 +2,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group, User 
 from django.contrib.auth.forms import AuthenticationForm
-from . forms import CustomerSignUpForm
-from job_listing.models import StudentUser
-from django.contrib.auth import login, authenticate
+# from . forms import CustomerSignUpForm
+from job_listing.models import StudentUser,  Recruiter
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
 # Create your views here.
@@ -12,12 +12,54 @@ from django.core.files.storage import FileSystemStorage
 def admin_login(request):
     return render(request, 'admin_login.html')
 
+def admin_signup(request):
+    return render(request, 'admin_signup.html')
 
-def user_login(request):
-    error = ''
+def recruiter_login (request):
+    error = " "
     if request.method == 'POST':
        username = request.POST['email'];
-       password = request.POST['password'];
+       password = request.POST['password1'];
+       user = authenticate(username=username, password= password)
+       if user:
+            try:
+               user1 = Recruiter.objects.get(user=user)
+               if user1.type == 'recruiter' and user1.status!='pending':
+                   login(request, user)
+                   error="no"
+               else:
+                   error= "not"
+            except:
+               error = "yes"
+       else:
+           error = "yes"
+    d = {'error': error} 
+    return render(request, 'recruiter_login.html')
+
+def recruiter_signup (request):
+    error = " "
+    if request.method == 'POST':
+        fname = request.POST['first_name'];
+        lname = request.POST['last_name'];
+        email = request.POST['email'];
+        password = request.POST['password1'];
+        contact = request.POST['contact'];
+        company_name = request.POST['company_name'];
+      
+        try:
+          user=User.objects.create_user(first_name = fname, last_name = lname, email = email, password=password)
+          Recruiter.objects.create(user=user, mobile=contact, company_name= company_name, stype= "recruiter", status = "pedding")
+          error = "no"
+        except:
+            error = "yes" 
+    d ={'error':error}
+    return render(request, 'recruiter_signup.html' , d)
+
+def user_login(request):
+    error = " "
+    if request.method == 'POST':
+       username = request.POST['email'];
+       password = request.POST['password1'];
        user = authenticate(username=username, password= password)
        if user:
             try:
@@ -31,12 +73,12 @@ def user_login(request):
                error = "yes"
        else:
            error = "yes"
-           
-    return render(request, 'user_login.html', {'error': error})
+    d = {'error': error}      
+    return render(request, 'user_login.html', d)
 
 
 def user_signup(request):
-    error = ''
+    error = " "
     if request.method == 'POST':
         fname = request.POST['first_name'];
         lname = request.POST['last_name'];
@@ -47,7 +89,8 @@ def user_signup(request):
         gender = request.POST['gender'];
         try:
           user=User.objects.create_user(first_name = fname, last_name = lname, email = email, password=password)
-          StudentUser.objects.create(user=user, mobile=contact, image= image, gender= gender, stype= "student")
+          StudentUser.objects.create(user=user, mobile=contact, contact=contact, image= image, gender= gender, stype= "student")
+        
           error = "no"
         except:
             error = "yes" 
@@ -56,39 +99,11 @@ def user_signup(request):
 
 
 
-def user_logout(request):
-    return render(request, 'admin_login.html')
+def Logout(request):
+    logout(request)
+    return redirect("home")
 
 def change_password(request):
     return render(request, 'admin_login.html')
-# def login(request):
-#     if request.method == 'POST':
-#         form= AuthenticationForm(data=request.POST)
-#         if form.is_valid():
-#             username = request.POST['username']
-#             password = request.POST['password']
-#             user = authenticate(username = username)
-#             pas = authenticate(password= password)
-#             if user is not None and pas is not None:
-#                 login(request, user, pas)
-#                 return redirect('home')
-#             else:
-#                 return redirect('login')
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, 'registration/login.html', {'form':form})
-        
-# def register(request):
-#     if request.method == 'POST':
-#         form = CustomerSignUpForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             username = form.cleaned_data.get('username')
-#             signup_user = User.objects.get(username=username)
-#             customer_group = Group.objects.get(name= 'Customer')
-#             customer_group.user_set.add(signup_user)
-#             return redirect("{% url 'login'%}")
-#     else:
-#          form = CustomerSignUpForm() 
-#     return   render(request, 'register.html', {'form':form}) 
+
 
