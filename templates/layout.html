@@ -10,11 +10,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
-    />
+   
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -52,20 +48,15 @@
     </style>
 
     {% block cssfiles %}{% endblock cssfiles %}
-    <title>Fenice</title>
+    <title>Job Connect</title>
   </head>
 
   <body>
     {% if not rec_navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="{% url 'detail-candidates' %}">
-        <img
-          src="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
-          width="30"
-          height="30"
-          class="d-inline-block align-top mr-3"
-          alt=""
-        /><b>Fenice</b>
+       
+        <b>Job Connect</b>
       </a>
       <button
         class="navbar-toggler"
@@ -91,7 +82,7 @@
           <a
             class="nav-item nav-link {{ intel_page }}"
             href="{% url 'intelligent-search' %}"
-            >Get Relevant Jobs</a
+            >Available Jobs</a
           >
           <a
             class="nav-item nav-link {{ account_page }}"
@@ -105,7 +96,7 @@
             >Logout</a
           >
           <a class="nav-item nav-link" href="{% url 'add-job' %}"
-            >Recruiters/ Employers</a
+            >Employers</a
           >
           {% else %}
           <a
@@ -114,7 +105,7 @@
             >Login</a
           >
           <a class="nav-item nav-link" href="{% url 'detail-recruiters' %}"
-            >Recruiters/ Employers</a
+            >Employers</a
           >
           {% endif %}
         </div>
@@ -123,13 +114,7 @@
     {% else %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
       <a class="navbar-brand" href="{% url 'detail-recruiters' %}">
-        <img
-          src="https://dl.dropboxusercontent.com/s/vqp7i2tv6uvc1gs/logofenice.jfif?dl=0"
-          width="30"
-          height="30"
-          class="d-inline-block align-top mr-3"
-          alt=""
-        /><b>Fenice</b>
+       <b>Job Connect</b>
       </a>
       <button
         class="navbar-toggler"
@@ -152,7 +137,7 @@
           <a
             class="nav-item nav-link {{ add_job_page }}"
             href="{% url 'add-job' %}"
-            >Add Job Post</a
+            >Post Job</a
           >
           <a
             class="nav-item nav-link {{ manage_jobs_page }}"
@@ -179,7 +164,7 @@
           >
           {% endif %}
           <a class="nav-item nav-link" href="{% url 'home' %}"
-            >Job Seekers/Candidates</a
+            >Job Seekers</a
           >
         </div>
       </div>
@@ -191,7 +176,7 @@
       <hr my-2 />
       <div class="row">
         <div class="col-sm-6 col-md-4 footer-navigation">
-          <h3>Fenice</h3>
+          <h3>Job Connect</h3>
           <p class="links">
             <a href="{% url 'detail-candidates' %}">Job Seekers</a
             ><strong> · </strong
@@ -203,35 +188,26 @@
             ><a href="{% url 'privacy-policy' %}">Privacy Policy</a>
           </p>
           <p class="company-name">
-            Fenice @ 2020<br /><small class="text-muted"
+            Job Connect @ 2023<br /><small class="text-muted"
               >All rights reserved!</small
             ><br />
           </p>
         </div>
         <div class="col-sm-6 col-md-4 footer-contacts">
           <div>
-            <span class="fa fa-map-marker footer-contacts-icon"></span>
-            <p><span class="new-line-span">IIT BHU</span>Varanasi, India</p>
-          </div>
-
-          <div>
             <i class="fa fa-envelope footer-contacts-icon"></i>
-            <p><a href="#" target="_blank">networkfenice@gmail.com</a></p>
+            <p><a href="#" target="_blank">jobconnect@gmail.com</a></p>
           </div>
         </div>
         <div class="clearfix"></div>
         <div class="col-md-4 footer-about">
           <h4>About the company</h4>
           <p>
-            Fenice Networks mission is to make hiring easier. We aim to save
-            time for both job seekers and recruiters and to make the hiring
-            process smoother. We continue to innovate and find new solutions to
-            make hiring process simpler.
-          </p>
+            Job Connect is an online job platform that connects job seekers to their potential Employers
           <div class="social-links social-icons">
             <a href="#"><i class="fa fa-facebook"></i></a
             ><a href="#"><i class="fa fa-twitter"></i></a
-            ><a href="https://www.linkedin.com/company/fenicenetwork/"
+            ><a href="https://www.linkedin.com/company/careerConnect/"
               ><i class="fa fa-linkedin"></i
             ></a>
           </div>
