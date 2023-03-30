@@ -10,8 +10,8 @@
             <div class="form-group">
               <a
                 class="btn btn-outline-secondary btn-block"
-                href="{% provider_login_url 'google' %}"
-                ><img
+                href="{% url 'socialaccount_signup' %}"
+                ></a><img>
                   src="https://dl.dropboxusercontent.com/s/es5sylabbcaobjr/google.png?dl=0"
                   alt="Google"
                   height="30"
@@ -21,7 +21,7 @@
               <br />
               <a
                 class="btn btn-outline-secondary btn-block"
-                href="{% provider_login_url 'github' %}"
+                href="{% url 'socialaccount_signup' %}"
                 ><img
                   src="https://dl.dropboxusercontent.com/s/2929dbjh0nvgbgn/github.png?dl=0"
                   alt="Github"
@@ -32,7 +32,7 @@
               <br />
               <a
                 class="btn btn-outline-dark btn-block"
-                href="{% provider_login_url 'linkedin_oauth2' %}"
+                href="{% url 'socialaccount_signup' %}"
                 ><img
                   src="https://dl.dropboxusercontent.com/s/yz30dq16gqmjbv1/linkedin.png?dl=0"
                   alt="Linkedin"
