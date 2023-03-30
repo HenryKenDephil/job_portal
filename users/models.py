@@ -16,16 +16,16 @@ class Recruiter(models.Model):
     def __str__(self):
         return self.type
 
-# class Applicant(models.Model):
-#     user = models.ForeignKey( User, null=True , max_length=20, on_delete=models.CASCADE )
-#     fname = models.CharField(max_length= 20, null=True  ),
-#     lname = models.CharField(max_length= 20 ,null=True  ),
-#     email = models.EmailField(max_length= 250, null=True ,help_text='e.g youremail@gmail.com')
-#     phone = models.CharField(max_length= 15 , null=True),
-#     profile_picture = models.ImageField(null=True, blank=True),
+class Applicant(models.Model):
+    user = models.ForeignKey( User, null=True , max_length=20, on_delete=models.CASCADE )
+    fname = models.CharField(max_length= 20, null=True  ),
+    lname = models.CharField(max_length= 20 ,null=True  ),
+    email = models.EmailField(max_length= 250, null=True ,help_text='e.g youremail@gmail.com')
+    phone = models.CharField(max_length= 15 , null=True),
+    profile_picture = models.ImageField(null=True, blank=True),
     
-#     def __str__(self):
-#         return self.user.username
+    def __str__(self):
+        return self.user.username
 
 class StudentUser(models.Model):
     user = models.ForeignKey( User, on_delete=models.CASCADE )

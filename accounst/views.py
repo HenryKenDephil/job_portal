@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import Group, User 
 from django.contrib.auth.forms import AuthenticationForm
 # from . forms import CustomerSignUpForm
-from job_listing.models import StudentUser,  Recruiter
+from users.models import StudentUser,  Recruiter
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.core.files.storage import FileSystemStorage
