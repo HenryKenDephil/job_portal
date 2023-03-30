@@ -106,4 +106,7 @@ def Logout(request):
 def change_password(request):
     return render(request, 'admin_login.html')
 
-
+def user_home(request):
+    if not request.user.is_authenticated:
+        return redirect('user_login')
+    return render(request, 'user_home.html')

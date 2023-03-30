@@ -13,8 +13,8 @@ class Recruiter(models.Model):
     date_joined = models.DateField(auto_now_add=True)
     type = models.CharField(max_length=15, null=True)
     status = models.CharField(max_length=20, null=True)
-def __str__(self):
-        return self.company_name
+    def __str__(self):
+        return self.type
 
 # class Applicant(models.Model):
 #     user = models.ForeignKey( User, null=True , max_length=20, on_delete=models.CASCADE )

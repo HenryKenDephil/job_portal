@@ -6,7 +6,8 @@ admin page
 {% endblock %}
 
 {%block user-page%}
-<marquee style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
+<marquee
+    style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
     User Login
 </marquee>
 
@@ -15,12 +16,12 @@ admin page
     <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
         <div class="card-body">
 
-            <form method="post">
+            <form method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="id_email">Email:</label>
-                    <input type="Email" class="form-control" name="email" autocomplete="Email"
-                        required="" id="id_email" placeholder="youremail@gmail.com">
+                    <input type="Email" class="form-control" name="email" autocomplete="Email" required="" id="id_email"
+                        placeholder="youremail@gmail.com">
 
                 </div>
                 <div class="form-group">
@@ -30,9 +31,11 @@ admin page
 
                 </div>
                 <div class="form-group">
-                    <button type="submit" value="Login" class="btn btn-primary btn-block" style="margin-top: 2%; color:purple; background-color:gray"> Login </button>
+                    <button type="submit" value="Login" class="btn btn-primary btn-block"
+                        style="margin-top: 2%; color:purple; background-color:gray"> Login </button>
                 </div>
-                 <a href="{% url 'user_signup' %}" class="additional-link" style="color:gray; text-decoration:none" > Dont have an account? <span> SignUp </span> </a>
+                <a href="{% url 'user_signup' %}" class="additional-link" style="color:gray; text-decoration:none"> Dont
+                    have an account? <span> SignUp </span> </a>
             </form>
         </div>
     </div>
@@ -41,15 +44,14 @@ admin page
 </section>
 
 
-{% if  error == "no" %}
+{% if error == "yes" %}
 <script>
     alert('login successfully');
     window.location.href = "{% url 'user_home' %}"
 </script>
 {% endif %}
 
-{% if error == "yes"  %}
-
+{% if error == "no" %}
 <script>
     alert('invalid credintials used, try again');
 </script>

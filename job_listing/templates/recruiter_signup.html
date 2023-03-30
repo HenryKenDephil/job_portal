@@ -26,6 +26,7 @@ user signup page
     style="font-family:'Monotype Corsiva'; font-size:25px; color:cyan; background-color:rgb(237, 19, 19); margin-top:3%  ">
     recruiter signup
 </marquee>
+
 <section class="section-conten padding-y" style="min-height:84vh">
     <div class="container" style=" margin-top:100px;">
         <form onsubmit="return checkpass();" name="signup" method="POST">
@@ -113,15 +114,21 @@ user signup page
 
 
 
-{% if  error == "no" %}
+{% if  error == "yes" %}
 <script>
     alert('signup successfully');
     window.location.href = "{% url 'recruiter_login' %}"
 </script>
 {% endif %}
 
-{% if error == "yes"  %}
+{% if error == "no"  %}
 
+<script>
+    alert('something went wrong, try again');
+</script>
+{% endif %}
+
+{% if error == "not"  %}
 <script>
     alert('something went wrong, try again');
 </script>

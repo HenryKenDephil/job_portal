@@ -137,14 +137,14 @@ user signup page
 
 
 
-{% if  error == "no" %}
+{% if  error == "yes" %}
 <script>
     alert('signup successfully');
     window.location.href = "{% url 'admin_login' %}"
 </script>
 {% endif %}
 
-{% if error == "yes"  %}
+{% if error == "no"  %}
 
 <script>
     alert('something went wrong, try again');

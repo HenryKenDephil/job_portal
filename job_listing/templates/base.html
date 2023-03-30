@@ -1,21 +1,23 @@
 <!Doctype html>
 {% load static %}
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Online Job Portal| {% block title %}
-      {% endblock %}
-  
-    </title>
-    <!-- Favicon Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href=" {% static 'style.css' %}">
- </head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Online Job Portal| {% block title %}
+    {% endblock %}
+
+  </title>
+  <!-- Favicon Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href=" {% static 'style.css' %}">
+</head>
 
 
 
@@ -28,7 +30,7 @@
       </div>
       <div class="col-sm-4 mt-5">
         <span style="font-weight:bold ; font-size: 30px">
-          <span style="color :rgb(237, 19, 19)"> Online job </span> 
+          <span style="color :rgb(237, 19, 19)"> Online job </span>
           <span style="color : purple"> Portal system </span>
         </span>
       </div>
@@ -60,14 +62,14 @@
           <a class="nav-link text-white" href="{% url 'home' %}" style="margin-left:20px ;">Home <span
               class="sr-only">(current)</span></a>
         </li>
-       
 
-       
 
-       
+
+
+
 
         <li class="nav-item">
-          <a class="nav-link text-light" href="{% url 'home' %}">Contact</a>
+          <a class="nav-link text-light" href="#footer">Contact US</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-light" href="{% url 'home' %}">About Us</a>
@@ -83,7 +85,8 @@
           <a class="nav-link text-white" href="{% url 'user_login' %}"><i class="fa fa-user-plus"></i> User Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{% url 'recruiter_login' %}"> <i class="fa fa-user"></i> Recruiter Login</a>
+          <a class="nav-link text-white" href="{% url 'recruiter_login' %}"> <i class="fa fa-user"></i> Recruiter
+            Login</a>
         </li>
 
       </ul>
@@ -127,32 +130,47 @@
 
 
 
-  <footer class="footer bg-dark text-center mt-5 p-2 text-white ">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 col-sm-4">
-          <a href="#"><img class="footer-logo mt-2" src="{% static 'images/job logo.avif' %}" width='70' height='70'
-              alt="image"></a>
-          <p>Get all the jobs you want in your dream company</p>
-       </div>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copyright text-center mt-5">
-            <p >Copyright © 2023 All Rights Reserved.</p>
+  <section id="footer">
+    <footer class="footer bg-dark text-center mt-5 p-2 text-white ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-4">
+            <a href="#"><img class="footer-logo mt-2" src="{% static 'images/job logo.avif' %}" width='70' height='70'
+                alt="image"></a>
+            <p>Get all the jobs you want in your dream company</p>
+          </div>
+          <div class="col-md-4 forter_box">
+            <p><b>CONTACT US</b></p>
+            <p><i class="fa fa-map-marker"></i> Online Job Portal </p>
+            <P> <i class="fa fa-phone"></i> +254708712xxx</P>
+            <P> <i class="fa fa-phone"></i> +254777100xxx</P>
+            <P> <i class="fa fa-envelope-o"></i> uvw@gmail.com</P>
+          </div>
+          <div class="col-md-4 forter_box">
+            <p><b>SUBSCRIBE NEWS LETTER</b></p>
+            <input type="email" class="form-control" placeholder=" Your email">
+            <button type="button" class="btn mt-3" style="background-color:purple;">subcribe</button>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="copyright text-center mt-5">
+                <p>Copyright © 2023 All Rights Reserved.</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
 
 
-  </footer>
+    </footer>
+  </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
-  integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
 
 
 

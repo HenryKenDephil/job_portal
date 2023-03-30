@@ -14,17 +14,17 @@ admin page
 
     <div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
         <div class="card-body">
-            <form class="container mt 5" method="post" >
+            <form class="container mt 5" method="POST" >
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="id_username">Username:</label>
-                    <input type="Username" class="form-control" name="Username" autocomplete="Username"
-                        required="" id="id_Username" placeholder="Enter Username">
-            
+                    <label for="id_email">Email:</label>
+                    <input type="Email" class="form-control" name="email" autocomplete="Email"
+                        required="" id="id_email" placeholder="youremail@gmail.com">
+
                 </div>
                 <div class="form-group">
                     <label for="id_password">Password:</label>
-                    <input type="password" class="form-control" name="password" autocomplete="current-password"
+                    <input type="password" class="form-control" name="password1" autocomplete="current-password"
                         required="" id="id_password"  placeholder="*********">
             
                 </div>
@@ -44,5 +44,19 @@ admin page
 </section>
 
 
+{% if  error == "yes" %}
+<script>
+    alert('login successfully');
+    window.location.href = "{% url 'recruiter_home' %}"
+</script>
+{% endif %}
+
+{% if error == "no"  %}
+
+<script>
+    alert('invalid credintials used, try again');
+</script>
+
+{% endif %}
 
 {% endblock %}
